@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Vazir:wght@300;400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Vazir', sans-serif;
+  background: linear-gradient(135deg, #1A1A1A 0%, #101010 100%);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #00FF00, #00D1FF);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #00D1FF, #FF007F);
+}
+
+/* Glassmorphism utility class */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Neon button styles */
+.btn-neon {
+  position: relative;
+  background: transparent;
+  border: 2px solid;
+  transition: all 0.3s ease;
+}
+
+.btn-neon:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.2);
+}
+
+.btn-neon-green {
+  border-color: #00FF00;
+  color: #00FF00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.btn-neon-green:hover {
+  background: rgba(0, 255, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+.btn-neon-pink {
+  border-color: #FF007F;
+  color: #FF007F;
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
+}
+
+.btn-neon-pink:hover {
+  background: rgba(255, 0, 127, 0.1);
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
+}
+
+.btn-neon-blue {
+  border-color: #00D1FF;
+  color: #00D1FF;
+  box-shadow: 0 0 10px rgba(0, 209, 255, 0.3);
+}
+
+.btn-neon-blue:hover {
+  background: rgba(0, 209, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 209, 255, 0.5);
+}
+
+/* Text glow effects */
+.text-glow-green {
+  text-shadow: 0 0 10px #00FF00;
+}
+
+.text-glow-pink {
+  text-shadow: 0 0 10px #FF007F;
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 10px #00D1FF;
+}
+
+/* Loading animation */
+.loading-dots {
+  display: inline-block;
+}
+
+.loading-dots:after {
+  content: '';
+  animation: loading-dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes loading-dots {
+  0%, 20% { content: ''; }
+  40% { content: '.'; }
+  60% { content: '..'; }
+  80%, 100% { content: '...'; }
+}
+
+/* Persian/RTL specific styles */
+[dir="rtl"] .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .glass {
+    backdrop-filter: blur(5px);
+  }
+}
